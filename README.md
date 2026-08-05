@@ -1,3 +1,13 @@
+
+```
+git submodule add https://github.com/EloiStree/2026_08_05_gdp_agarium_65m.git addons/2026_08_05_gdp_agarium_65m
+```
+
+```
+git clone https://github.com/EloiStree/2026_08_05_gdp_agarium_65m.git addons/2026_08_05_gdp_agarium_65m
+```
+
+
 # 2026_08_05_gdp_agarium_65m
 
 > Learn to play an Agar.io-like game with Godot GDScript
