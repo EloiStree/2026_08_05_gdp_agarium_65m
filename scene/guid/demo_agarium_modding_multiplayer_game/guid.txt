@@ -1,0 +1,6 @@
+Ajd6J7PMnAfYuVccDgiFUswUvGgxqaURrXfdP9dGW27G
+Agarium with GDScript
+Play Agarium multiplayer with GDScript
+
+Example of multiplayer using thrusted GDScript from other player.
+GDScript can do anything in your game. so be carefull of the code you add.
