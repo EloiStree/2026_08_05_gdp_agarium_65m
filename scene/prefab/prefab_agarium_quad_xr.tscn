@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dp7eogaetmasw"]
+
+[ext_resource type="Script" uid="uid://im6b8wkc66y1" path="res://addons/2026_08_05_gdp_agarium_65m/script/agarium_double_quad_xr.gd" id="1_t5sch"]
+[ext_resource type="Material" uid="uid://cbvoiqlfhx1ya" path="res://addons/2026_08_05_gdp_agarium_65m/assets/material/mat_player_uni_color.tres" id="2_2os1g"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_kqxq0"]
+
+[node name="AgariumQuadXR" type="Node3D" unique_id=1772331244 node_paths=PackedStringArray("_left_eye_quad", "_right_eye_quad", "_center_to_border_radius_anchor", "_center_anchor")]
+script = ExtResource("1_t5sch")
+_left_eye_quad = NodePath("PlaneLeftEye")
+_right_eye_quad = NodePath("PlaneRightEye")
+_center_to_border_radius_anchor = NodePath("RadiusAnchor")
+_center_anchor = NodePath(".")
+
+[node name="PlaneLeftEye" type="MeshInstance3D" parent="." unique_id=223914617]
+mesh = SubResource("QuadMesh_kqxq0")
+surface_material_override/0 = ExtResource("2_2os1g")
+
+[node name="PlaneRightEye" type="MeshInstance3D" parent="." unique_id=1998324083]
+mesh = SubResource("QuadMesh_kqxq0")
+surface_material_override/0 = ExtResource("2_2os1g")
+
+[node name="RadiusAnchor" type="Node3D" parent="." unique_id=858546841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)

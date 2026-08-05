@@ -1,3 +1,100 @@
 [gd_scene format=3 uid="uid://b7qoqt5kivt4i"]
 
+[ext_resource type="Material" uid="uid://c81xhnrd37q2t" path="res://addons/2026_08_05_gdp_agarium_65m/assets/material/mat_debug_agarium_65m.tres" id="1_v7ino"]
+[ext_resource type="PackedScene" uid="uid://dp7eogaetmasw" path="res://addons/2026_08_05_gdp_agarium_65m/scene/prefab/prefab_agarium_quad_xr.tscn" id="2_rvaag"]
+[ext_resource type="Script" uid="uid://k2oh0o2j1vye" path="res://addons/2026_08_05_gdp_agarium_65m/script/agarium_rotate_all_double_quad_xr.gd" id="2_yaqyx"]
+[ext_resource type="PackedScene" uid="uid://bojim83f21ii6" path="res://addons/2026_08_05_gdp_agarium_65m/scene/prefab/prefab_food_for_blob.tscn" id="3_o10k3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kqxq0"]
+material = ExtResource("1_v7ino")
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kqxq0"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7b2ur"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sq404"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_sq404"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7b2ur"]
+
 [node name="DemoAgariumModdingMultiplayerGame" type="Node3D" unique_id=664455226]
+
+[node name="AgariumSpace65535" type="Node3D" parent="." unique_id=1360352833]
+transform = Transform3D(65.535, 0, 0, 0, 65.535, 0, 0, 0, 65.535, 0, 0, 0)
+
+[node name="DebugCubeZone" type="MeshInstance3D" parent="AgariumSpace65535" unique_id=1878554335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -0.5)
+material_override = ExtResource("1_v7ino")
+mesh = SubResource("BoxMesh_kqxq0")
+
+[node name="TopRightFrontCorner" type="Node3D" parent="AgariumSpace65535" unique_id=1907219176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
+
+[node name="LeftDownBackCorner" type="Node3D" parent="AgariumSpace65535" unique_id=1553480840]
+
+[node name="WorldBoundary" type="StaticBody3D" parent="AgariumSpace65535" unique_id=664339087]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AgariumSpace65535/WorldBoundary" unique_id=767960468]
+shape = SubResource("WorldBoundaryShape3D_kqxq0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="AgariumSpace65535/WorldBoundary" unique_id=2019871554]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 1, 0)
+shape = SubResource("WorldBoundaryShape3D_kqxq0")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="AgariumSpace65535/WorldBoundary" unique_id=1891799571]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_7b2ur")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="AgariumSpace65535/WorldBoundary" unique_id=1658636980]
+transform = Transform3D(-4.371139e-08, -1, 0, -1, 4.371139e-08, 8.742277e-08, -8.742278e-08, 0, -1, 1, 1, 0)
+shape = SubResource("WorldBoundaryShape3D_sq404")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="AgariumSpace65535/WorldBoundary" unique_id=1824565619]
+transform = Transform3D(-4.3711385e-08, -4.371139e-08, 1, -1, 0, -4.371139e-08, 0, -1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_7b2ur")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="AgariumSpace65535/WorldBoundary" unique_id=1330753638]
+transform = Transform3D(-4.3711385e-08, 4.371138e-08, -1, -1, -8.742277e-08, 4.371138e-08, -8.742276e-08, 1, 4.3711392e-08, 1, 1, -1)
+shape = SubResource("WorldBoundaryShape3D_sq404")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=884657533]
+transform = Transform3D(0.96725506, -0.10433038, 0.23137167, -0.010998549, 0.8935207, 0.44888714, -0.25356796, -0.43673307, 0.86311495, 46.325806, 63.52811, 38.81569)
+
+[node name="CodeInScene" type="Node" parent="." unique_id=143753011]
+
+[node name="AgariumRotateAllDoubleQuadXR" type="Node" parent="CodeInScene" unique_id=9623776]
+script = ExtResource("2_yaqyx")
+metadata/_custom_type_script = "uid://k2oh0o2j1vye"
+
+[node name="PlayersInGame" type="Node3D" parent="." unique_id=1974206674]
+
+[node name="AgariumBlob" type="CharacterBody3D" parent="PlayersInGame" unique_id=245461479]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9638342, -2.6729965)
+
+[node name="Node3D" type="Node3D" parent="PlayersInGame/AgariumBlob" unique_id=50989058]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayersInGame/AgariumBlob/Node3D" unique_id=1609845129]
+visible = false
+mesh = SubResource("SphereMesh_sq404")
+
+[node name="AgariumQuadXR" parent="PlayersInGame/AgariumBlob/Node3D" unique_id=1772331244 instance=ExtResource("2_rvaag")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayersInGame/AgariumBlob" unique_id=1514800561]
+shape = SubResource("SphereShape3D_7b2ur")
+
+[node name="FoodForBlob" parent="PlayersInGame" unique_id=415872481 instance=ExtResource("3_o10k3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.460447, 2.6428847, -5.9635468)
+
+[node name="FoodForBlob2" parent="PlayersInGame" unique_id=80077978 instance=ExtResource("3_o10k3")]
+transform = Transform3D(0.62303454, -0.24609192, 0.74247336, -1.4901163e-08, 0.9492186, 0.3146174, -0.7821943, -0.19601752, 0.591396, 13.913686, 2.6428847, -5.9635468)
+
+[node name="FoodForBlob3" parent="PlayersInGame" unique_id=939705432 instance=ExtResource("3_o10k3")]
+transform = Transform3D(0.7424842, 0, -0.6698636, 0, 1, 0, 0.6698636, 0, 0.7424842, 13.913686, 5.2144947, -5.9635468)
+
+[editable path="PlayersInGame/FoodForBlob"]
+[editable path="PlayersInGame/FoodForBlob/AgariumQuadXR"]
+[editable path="PlayersInGame/FoodForBlob2"]
+[editable path="PlayersInGame/FoodForBlob2/AgariumQuadXR"]
+[editable path="PlayersInGame/FoodForBlob3"]
+[editable path="PlayersInGame/FoodForBlob3/AgariumQuadXR"]

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bojim83f21ii6"]
+
+[ext_resource type="PackedScene" uid="uid://dp7eogaetmasw" path="res://addons/2026_08_05_gdp_agarium_65m/scene/prefab/prefab_agarium_quad_xr.tscn" id="1_fe1fu"]
+[ext_resource type="Material" uid="uid://dom5ckxouyn6m" path="res://addons/2026_08_05_gdp_agarium_65m/assets/material/mat_food_for_blob_uni_color.tres" id="2_c32hp"]
+
+[node name="FoodForBlob" type="Node3D" unique_id=415872481]
+
+[node name="AgariumQuadXR" parent="." unique_id=1772331244 node_paths=PackedStringArray("_center_to_border_radius_anchor", "_center_anchor") instance=ExtResource("1_fe1fu")]
+_center_to_border_radius_anchor = NodePath("RadiusAnchor")
+_center_anchor = NodePath(".")
+
+[node name="PlaneLeftEye" parent="AgariumQuadXR" index="0" unique_id=223914617]
+surface_material_override/0 = ExtResource("2_c32hp")
+
+[node name="PlaneRightEye" parent="AgariumQuadXR" index="1" unique_id=1998324083]
+surface_material_override/0 = ExtResource("2_c32hp")
+
+[node name="RadiusAnchor" type="Node3D" parent="AgariumQuadXR" unique_id=1757523943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+
+[editable path="AgariumQuadXR"]

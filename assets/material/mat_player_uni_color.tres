@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cbvoiqlfhx1ya"]
+
+[ext_resource type="Texture2D" uid="uid://cfjv5ncp14ot4" path="res://addons/2026_08_05_gdp_agarium_65m/assets/2d/circle-64.png" id="1_d4rt7"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0, 0.77382356, 3.85046e-06, 1)
+albedo_texture = ExtResource("1_d4rt7")
